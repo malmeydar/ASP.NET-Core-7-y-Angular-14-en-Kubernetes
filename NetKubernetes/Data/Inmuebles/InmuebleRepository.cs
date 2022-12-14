@@ -23,10 +23,16 @@ public class InmuebleRepository : IInmuebleRepository
         var usuario=await _userManager.FindByNameAsync(_usuariosesion.ObtenerUsuarioSesion());
         inmueble.FechaCreacion= DateTime.Now;
         inmueble.UsuarioID= Guid.Parse( usuario.Id);
+        _contexto.Inmuebles!.Add(inmueble);
+
 
     }
     public void DeleteInmueble(int Id)
     {
+        var inmueble=_contexto.Inmuebles!.FirstOrDefault(x=>x.Id==Id);
+        _contexto.Inmuebles!.Remove(inmueble!);
+
+
 
     }
 

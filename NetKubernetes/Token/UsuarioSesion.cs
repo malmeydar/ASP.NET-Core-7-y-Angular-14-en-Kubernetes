@@ -20,11 +20,8 @@ public class UsuarioSesion : IUsuarioSesion
 
     public string ObtenerUsuarioSesion()
     {
-        // var userName= _IHttpContextAccessor.HttpContext!.user?.Claims?.FirstOrDefault(x=>x.Type==ClaimsTypes.NameIdentifier)?.value;
-        // return userName;
-        var userName=_IHttpContextAccessor.HttpContext!.User?.Claims;
+        var userName= _IHttpContextAccessor.HttpContext!.User?.Claims?.FirstOrDefault(x=>x.Type==ClaimTypes.NameIdentifier)?.Value;
         return userName;
-
-
+        
     }
 }
