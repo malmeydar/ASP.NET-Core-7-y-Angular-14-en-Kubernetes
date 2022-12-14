@@ -20,5 +20,6 @@ public class Inmueble{
     public string? Picture { get; set; }
 
     public DateTime? FechaCreacion { get; set; }
+    public Guid? UsuarioID { get; set; }
 
 }
